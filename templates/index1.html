@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Finance API</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-style">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#micon">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <a href=""><img class="logo" src="logo1.png"</a> -->
+                    <h4>Team Boseman Company</h4>
+                    <!-- <li><a href="">Home</a></li> -->
+                </div>
+                <div class="collapse navbar-collapse" id="micon">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Features</a></li>
+                        <li><a href="">Members</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 banner-info">
+                    <h1>WELCOME to!!!!!!!!!</h1> 
+                    <p class="big-text">Builings insurance claim prediction</p>
+                    <p>Click the button to find you prediction</p>  
+                    <a class="btn btn-first", href="#modal">Click me</a>
+                    <a class="btn btn-second" href="#" onclick="openForm()">Test me</a>
+                </div>
+                <div class="col-sm-6 banner-image">
+                    <img src="images/p.jpg"  class="img-responsive">                
+                </div>
+            </div>
+        </div>
+        <div id="modal">
+            <div class="modal__window">
+                <a class="modal__close" href="#">X</a>
+                <h1>Check Prediction</h1>
+                <input class="input-pred" type="text" name="yearofobservation" placeholder="Year of Observation" required>
+                <input class="input-pred" type="text" name="insured_period" placeholder="Insurance period" required>
+                <input class="input-pred" type="text" name="residential" placeholder="Residential(Urban/Rural)" required>
+                <input class="input-pred" type="text" name="building_painted" placeholder="Building paint" required>
+                <input class="input-pred" type="text" name="building_fenced" placeholder="Building fenced" required>
+                <input class="input-pred" type="text" name="garden" placeholder="Garden" required>
+                <input class="input-pred" type="text" name="settlement" placeholder="Settlement" required>
+                <input class="input-pred" type="text" name="building_dimension" placeholder="Building Dimension" required>
+                <input class="input-pred" type="text" name="building_type" placeholder="Building type" required>
+                <input class="input-pred" type="text" name="date_of_occupancy" placeholder="Date of occupancy" required>
+                <input class="input-pred" type="text" name="numberofwindows" placeholder="Number of windows" required>
+                <input class="input-pred" type="text" name="geo_code" placeholder="Geo code" required>
+                <a href="#" class="btn btn-third">Predict</a>
+                <a href="#" class="btn btn-third">Close</a>   
+           <br>
+           {{ prediction_text }}
+           
+            </div>
+        </div>
+        
+        <script>
+        document.getElementById("pred_button").addEventListener('click', function(){
+            document.querySelector('.popup').style.display="flex";
+        })
+                 
+        </script>
+    </header>
+</body>
+
+</html>
